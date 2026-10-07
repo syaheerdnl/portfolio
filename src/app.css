@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@source "../public/index.html";
+
+@theme {
+    --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --color-accent: oklch(0.55 0.13 175);
+    --color-accent-soft: oklch(0.95 0.04 175);
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+    }
+    body {
+        @apply bg-stone-50 text-stone-900 antialiased dark:bg-stone-950 dark:text-stone-100;
+    }
+}
+
+@utility card {
+    @apply rounded-2xl border border-stone-200 bg-white dark:border-stone-800 dark:bg-stone-900;
+}
+
+@utility chip {
+    @apply rounded-md bg-stone-100 px-2 py-0.5 text-xs font-medium text-stone-700 dark:bg-stone-800 dark:text-stone-300;
+}
+
+@utility eyebrow {
+    @apply text-xs font-semibold tracking-widest text-accent uppercase;
+}
