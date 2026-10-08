@@ -256,7 +256,12 @@
             pill.style.width = a.offsetWidth + 'px';
         };
         const sections = ['work', 'experience', 'skills', 'contact'].map((id) => document.getElementById(id));
+        // After a nav click, keep that item highlighted until the smooth scroll settles,
+        // so short sections near the end (Skills) don't get skipped.
+        let locked = null, unlock;
+        links.forEach((l) => l.addEventListener('click', () => { locked = l.dataset.nav; setActive(locked); }));
         const onScroll = () => {
+            if (locked) { clearTimeout(unlock); unlock = setTimeout(() => (locked = null), 150); return; }
             const y = window.scrollY + window.innerHeight * 0.35;
             let current = 'top';
             sections.forEach((sec) => { if (sec.offsetTop <= y) current = sec.id; });
