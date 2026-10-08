@@ -14,21 +14,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/app.css?v=b668e324">
+    <link rel="stylesheet" href="/assets/app.css?v=6fac6554">
 </head>
 <body>
     <!-- Top bar -->
-    <header class="sticky top-0 z-20 bg-ink/80 backdrop-blur">
+    <header class="sticky top-0 z-20 bg-ink/95 md:bg-ink/80 md:backdrop-blur">
         <nav class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
             <a href="#top" class="font-display text-xl text-white italic" aria-label="Home">sd<span class="text-accent">.</span></a>
-            <span id="greeting" class="rounded-full border border-line bg-panel px-4 py-1.5 text-sm text-zinc-300">Hello</span>
+            <!-- Pill nav: top centre on desktop, floating at the bottom on phones -->
+            <div id="pillnav" class="fixed bottom-4 left-1/2 z-30 -translate-x-1/2 rounded-full border border-white/10 bg-zinc-900/80 p-1 shadow-xl shadow-black/40 backdrop-blur md:relative md:bottom-auto md:left-auto md:translate-x-0 md:shadow-none">
+                <span id="pill" class="pointer-events-none absolute top-1 bottom-1 rounded-full bg-white/10 transition-all duration-300 ease-out">
+                    <span class="absolute -top-1 left-1/2 h-0.5 w-6 -translate-x-1/2 rounded-full bg-accent shadow-[0_0_12px_3px_rgba(45,212,191,0.55)]"></span>
+                </span>
+                <ul class="relative flex text-sm">
+                    <li><a href="#top" data-nav="top" class="navlink">Home</a></li>
+                    <li><a href="#work" data-nav="work" class="navlink">Work</a></li>
+                    <li><a href="#experience" data-nav="experience" class="navlink">Experience</a></li>
+                    <li><a href="#skills" data-nav="skills" class="navlink">Skills</a></li>
+                    <li><a href="#contact" data-nav="contact" class="navlink">Contact</a></li>
+                </ul>
+            </div>
             <a href="/Muhammad_Syaheer_Daniel_Resume.pdf?v=92d78447" class="rounded-lg border border-line bg-panel px-3 py-1.5 text-sm font-medium text-zinc-200 hover:border-zinc-600">Resume</a>
         </nav>
     </header>
 
     <main id="top" class="mx-auto max-w-5xl px-4 sm:px-6">
         <!-- Hero -->
-        <section class="reveal py-20 text-center sm:py-28">
+        <section id="home" class="reveal py-20 text-center sm:py-28">
+            <p id="greeting" class="mb-6 inline-block rounded-full border border-line bg-panel px-4 py-1.5 text-sm text-zinc-300">Hello</p>
             <p class="eyebrow">Mobile &amp; Frontend Developer · Melaka</p>
             <h1 class="mt-5 font-display text-5xl leading-tight text-zinc-100 sm:text-7xl">
                 Muhammad Syaheer <em class="text-accent">Daniel</em>
@@ -192,7 +205,7 @@
         </section>
 
         <!-- Skills -->
-        <section class="reveal grid gap-8 border-t border-line py-16 md:grid-cols-[12rem_1fr]">
+        <section id="skills" class="reveal grid gap-8 border-t border-line py-16 md:grid-cols-[12rem_1fr]">
             <h2 class="eyebrow pt-1">Skills</h2>
             <div class="grid gap-6 sm:grid-cols-2">
                 <div><h3 class="text-sm text-zinc-500">Languages</h3><ul class="mt-3 flex flex-wrap gap-2"><li class="skill"><svg viewBox="0 0 24 24" fill="#2BB7F6" aria-hidden="true"><path d="M4.105 4.105S9.158 1.58 11.684.316a3.079 3.079 0 0 1 1.481-.315c.766.047 1.677.788 1.677.788L24 9.948v9.789h-4.263V24H9.789l-9-9C.303 14.5 0 13.795 0 13.105c0-.319.18-.818.316-1.105l3.789-7.895zm.679.679v11.787c.002.543.021 1.024.498 1.508L10.204 23h8.533v-4.263L4.784 4.784zm12.055-.678c-.899-.896-1.809-1.78-2.74-2.643-.302-.267-.567-.468-1.07-.462-.37.014-.87.195-.87.195L6.341 4.105l10.498.001z"/></svg>Dart</li><li class="skill"><svg viewBox="0 0 24 24" fill="#8F94CC" aria-hidden="true"><path d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715l.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218c.767 0 1.295.134 1.586.401s.378.7.263 1.299l-.572 2.944h-1.389zm7.597-2.265a2.782 2.782 0 0 1-.305.847c-.143.255-.33.49-.561.703a2.44 2.44 0 0 1-.917.551c-.336.108-.765.164-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649c.797 0 1.378.209 1.744.628.366.417.477 1.001.331 1.751zM17.766 10.207h-.943l-.516 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.551-1.049.092-.47.049-.802-.125-.995s-.524-.29-1.047-.29z"/></svg>PHP</li><li class="skill"><svg viewBox="0 0 24 24" fill="#E34F26" aria-hidden="true"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>HTML</li><li class="skill"><svg viewBox="0 0 24 24" fill="#8F6FD0" aria-hidden="true"><path d="M0 0v20.16A3.84 3.84 0 0 0 3.84 24h16.32A3.84 3.84 0 0 0 24 20.16V3.84A3.84 3.84 0 0 0 20.16 0Zm14.256 13.08c1.56 0 2.28 1.08 2.304 2.64h-1.608c.024-.288-.048-.6-.144-.84-.096-.192-.288-.264-.552-.264-.456 0-.696.264-.696.84-.024.576.288.888.768 1.08.72.288 1.608.744 1.92 1.296q.432.648.432 1.656c0 1.608-.912 2.592-2.496 2.592-1.656 0-2.4-1.032-2.424-2.688h1.68c0 .792.264 1.176.792 1.176.264 0 .456-.072.552-.24.192-.312.24-1.176-.048-1.512-.312-.408-.912-.6-1.32-.816q-.828-.396-1.224-.936c-.24-.36-.36-.888-.36-1.536 0-1.44.936-2.472 2.424-2.448m5.4 0c1.584 0 2.304 1.08 2.328 2.64h-1.608c0-.288-.048-.6-.168-.84-.096-.192-.264-.264-.528-.264-.48 0-.72.264-.72.84s.288.888.792 1.08c.696.288 1.608.744 1.92 1.296.264.432.408.984.408 1.656.024 1.608-.888 2.592-2.472 2.592-1.68 0-2.424-1.056-2.448-2.688h1.68c0 .744.264 1.176.792 1.176.264 0 .456-.072.552-.24.216-.312.264-1.176-.048-1.512-.288-.408-.888-.6-1.32-.816-.552-.264-.96-.576-1.2-.936s-.36-.888-.36-1.536c-.024-1.44.912-2.472 2.4-2.448m-11.031.018c.711-.006 1.419.198 1.839.63.432.432.672 1.128.648 1.992H9.336c.024-.456-.096-.792-.432-.96-.312-.144-.768-.048-.888.24-.12.264-.192.576-.168.864v3.504c0 .744.264 1.128.768 1.128a.65.65 0 0 0 .552-.264c.168-.24.192-.552.168-.84h1.776c.096 1.632-.984 2.712-2.568 2.688-1.536 0-2.496-.864-2.472-2.472v-4.032c0-.816.24-1.44.696-1.848.432-.408 1.146-.624 1.857-.63"/></svg>CSS</li></ul></div>
@@ -232,6 +245,27 @@
             entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
         }, { threshold: 0.12 });
         document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+        // Pill nav: slide the highlight to the section on screen
+        const pill = document.getElementById('pill');
+        const links = [...document.querySelectorAll('[data-nav]')];
+        const setActive = (id) => {
+            const a = links.find((l) => l.dataset.nav === id) || links[0];
+            links.forEach((l) => l.classList.toggle('active', l === a));
+            pill.style.left = a.offsetLeft + 4 + 'px';
+            pill.style.width = a.offsetWidth + 'px';
+        };
+        const sections = ['work', 'experience', 'skills', 'contact'].map((id) => document.getElementById(id));
+        const onScroll = () => {
+            const y = window.scrollY + window.innerHeight * 0.35;
+            let current = 'top';
+            sections.forEach((sec) => { if (sec.offsetTop <= y) current = sec.id; });
+            if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) current = 'contact';
+            setActive(current);
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        onScroll();
     </script>
 </body>
 </html>
