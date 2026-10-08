@@ -89,3 +89,28 @@
         .phone, .browser { transition: none; }
     }
 }
+
+/* PocketReview demo video popup */
+.demo-dialog {
+    margin: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    max-width: none;
+    max-height: none;
+    overflow: visible;
+}
+.demo-dialog::backdrop {
+    background: rgb(0 0 0 / 0.82);
+    backdrop-filter: blur(4px);
+}
+.demo-dialog video {
+    display: block;
+    height: min(78vh, 760px);
+    width: auto;
+    max-width: 90vw;
+    aspect-ratio: 540 / 1194;
+    border: 6px solid #27272a;
+    border-radius: 1.75rem;
+    background: #000;
+}

@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/app.css?v=d5f1e304">
+    <link rel="stylesheet" href="/assets/app.css?v=2560efe8">
 </head>
 <body>
     <!-- Top bar -->
@@ -110,15 +110,17 @@
                         </div>
                         <p class="mt-3 text-sm leading-relaxed text-zinc-400">AI code review for Dart and Kotlin on Android. Scores your code, points to the lines, and suggests fixes. Tested with 15 people: SUS 74.3 (Good).</p>
                     </div>
-                    <div class="mt-4 h-60 overflow-hidden rounded-xl bg-gradient-to-br from-blue-700 via-indigo-900 to-zinc-900 sm:h-64">
+                    <div class="relative mt-4 h-60 overflow-hidden rounded-xl bg-gradient-to-br from-blue-700 via-indigo-900 to-zinc-900 sm:h-64">
+                        <button type="button" data-demo-open class="absolute bottom-3 left-1/2 z-30 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-white/15 bg-black/70 px-3.5 py-1.5 text-xs font-medium text-white backdrop-blur transition hover:border-accent hover:text-accent"><svg viewBox="0 0 24 24" class="size-3.5" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>Watch demo <span class="text-zinc-400">3:43</span></button>
                         <div class="fan">
                             <div class="phone left"><img src="/assets/pr-home.webp?v=a6a73a04" alt="PocketReview home screen" loading="lazy" class="w-full"></div>
                             <div class="phone right"><img src="/assets/pr-feedback.webp?v=5f783d73" alt="Suggested fix for an issue" loading="lazy" class="w-full"></div>
                             <div class="phone mid"><img src="/assets/pr-results.webp?v=62966dfa" alt="Review result with a quality score of 62" loading="lazy" class="w-full"></div>
                         </div>
                     </div>
-                    <div class="flex flex-wrap gap-1.5 px-4 py-4">
+                    <div class="flex flex-wrap items-center gap-1.5 px-4 py-4">
                         <span class="pill">Flutter</span><span class="pill">AWS Lambda</span><span class="pill">DynamoDB</span><span class="pill">Gemini API</span>
+                        <button type="button" data-demo-open class="ml-auto text-xs text-zinc-500 transition hover:text-accent">Watch demo ▶</button>
                     </div>
                 </div>
 
@@ -234,6 +236,15 @@
         © 2026 Muhammad Syaheer Daniel · Hosted on my own VPS
     </footer>
 
+    <!-- PocketReview demo video -->
+    <dialog id="pr-demo" class="demo-dialog" aria-label="PocketReview demo video">
+        <div class="flex flex-col items-center gap-3">
+            <button type="button" data-demo-close class="self-end rounded-full border border-line bg-panel px-3 py-1 text-xs text-zinc-300 transition hover:border-accent hover:text-accent">Close ✕</button>
+            <video controls playsinline preload="none" poster="/assets/pr-demo-poster.webp?v=340af007" data-src="/assets/pr-demo.mp4?v=90503420"></video>
+            <p class="text-xs text-zinc-500">Recorded before the app was renamed from Glance.</p>
+        </div>
+    </dialog>
+
     <script>
         // Greeting by the visitor's local time
         const h = new Date().getHours();
@@ -271,6 +282,17 @@
         window.addEventListener('scroll', onScroll, { passive: true });
         window.addEventListener('resize', onScroll);
         onScroll();
+        // PocketReview demo: load the video only when someone opens it
+        const demo = document.getElementById('pr-demo');
+        const vid = demo.querySelector('video');
+        document.querySelectorAll('[data-demo-open]').forEach((b) => b.addEventListener('click', () => {
+            if (!vid.src) vid.src = vid.dataset.src;
+            demo.showModal();
+            vid.play().catch(() => {});
+        }));
+        demo.querySelector('[data-demo-close]').addEventListener('click', () => demo.close());
+        demo.addEventListener('click', (e) => { if (e.target === demo) demo.close(); });
+        demo.addEventListener('close', () => vid.pause());
     </script>
 </body>
 </html>
