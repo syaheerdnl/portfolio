@@ -33,6 +33,11 @@
 }
 
 /* Card header: number · category on a rule · date */
+@utility skill {
+    @apply flex items-center gap-2 rounded-lg border border-line bg-panel px-3 py-2 text-sm text-zinc-200 transition hover:border-zinc-600;
+    & svg { @apply size-4 shrink-0; }
+}
+
 @utility rule-label {
     @apply flex items-center gap-3 font-mono text-[0.65rem] tracking-[0.2em] text-zinc-500 uppercase;
 }
