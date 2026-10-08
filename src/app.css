@@ -81,11 +81,7 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
-        #pill { left: 4px; width: 0; }
-    body { padding-bottom: 4rem; }
-    @media (min-width: 768px) { body { padding-bottom: 0; } }
-
-    .reveal { opacity: 1; transform: none; transition: none; }
+        .reveal { opacity: 1; transform: none; transition: none; }
         .phone, .browser { transition: none; }
     }
 }
@@ -114,3 +110,48 @@
     border-radius: 1.75rem;
     background: #000;
 }
+
+/* Light mode: same classes, remapped colours. Dark stays the default. */
+html[data-theme="light"] {
+    color-scheme: light;
+    --color-ink: #fafafa;
+    --color-panel: #ffffff;
+    --color-line: #e4e4e7;
+    --color-accent: #0d9488;
+    --color-white: #09090b;
+    --color-zinc-100: #18181b;
+    --color-zinc-200: #27272a;
+    --color-zinc-300: #3f3f46;
+    --color-zinc-400: #52525b;
+    --color-zinc-500: #71717a;
+    --color-zinc-600: #a1a1aa;
+    --color-zinc-800: #f4f4f5;
+    --color-zinc-900: #f4f4f5;
+}
+/* Coloured badge text needs more contrast on white */
+html[data-theme="light"] {
+    --color-amber-300: #b45309;
+    --color-blue-300: #1d4ed8;
+    --color-teal-300: #0f766e;
+    --color-emerald-300: #047857;
+}
+html[data-theme="light"] .soon { background: linear-gradient(135deg, #fef3c7, #f4f4f5); }
+html[data-theme="light"] #pillnav { box-shadow: 0 10px 25px -10px rgb(0 0 0 / 0.15); }
+
+/* Screenshot galleries keep their dark look in both modes */
+html[data-theme="light"] .keep-dark {
+    --color-white: #ffffff;
+    --color-zinc-100: #f4f4f5;
+    --color-zinc-200: #e4e4e7;
+    --color-zinc-300: #d4d4d8;
+    --color-zinc-400: #a1a1aa;
+    --color-zinc-500: #71717a;
+    --color-zinc-600: #52525b;
+    --color-zinc-800: #27272a;
+    --color-zinc-900: #18181b;
+}
+
+/* Toggle icon: sun in dark mode, moon in light mode */
+.icon-moon { display: none; }
+html[data-theme="light"] .icon-sun { display: none; }
+html[data-theme="light"] .icon-moon { display: block; }
