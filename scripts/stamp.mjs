@@ -1,15 +1,14 @@
-// Adds a content hash to asset links so browsers and Cloudflare fetch the new file after each change.
+// Adds a content hash to every local asset link so browsers and Cloudflare
+// fetch the new file after each change (CSS, images, the resume PDF).
 import { createHash } from 'node:crypto';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 
 const hash = (file) => createHash('md5').update(readFileSync(file)).digest('hex').slice(0, 8);
-const files = ['assets/app.css', 'Muhammad_Syaheer_Daniel_Resume.pdf'];
 
 let html = readFileSync('public/index.html', 'utf8');
-for (const f of files) {
-    const v = hash(`public/${f}`);
-    const esc = f.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    html = html.replace(new RegExp(`/${esc}(\\?v=[a-f0-9]+)?"`, 'g'), `/${f}?v=${v}"`);
-    console.log(`${f}?v=${v}`);
-}
+html = html.replace(/"\/((?:assets\/)?[\w.-]+\.(?:css|webp|png|jpg|svg|pdf))(\?v=[a-f0-9]+)?"/g, (m, path) => {
+    const file = `public/${path}`;
+    return existsSync(file) ? `"/${path}?v=${hash(file)}"` : m;
+});
 writeFileSync('public/index.html', html);
+console.log('stamped asset links');
