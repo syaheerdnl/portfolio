@@ -3,28 +3,71 @@
 
 @theme {
     --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-    --color-accent: oklch(0.55 0.13 175);
-    --color-accent-soft: oklch(0.95 0.04 175);
+    --font-display: "Playfair Display", ui-serif, Georgia, serif;
+    --color-ink: #0a0a0b;
+    --color-panel: #111113;
+    --color-line: #232327;
+    --color-accent: #2dd4bf;
 }
 
 @layer base {
     html {
         scroll-behavior: smooth;
         scroll-padding-top: 5rem;
+        color-scheme: dark;
     }
     body {
-        @apply bg-stone-50 text-stone-900 antialiased dark:bg-stone-950 dark:text-stone-100;
+        @apply bg-ink font-sans text-zinc-200 antialiased;
     }
-}
-
-@utility card {
-    @apply rounded-2xl border border-stone-200 bg-white dark:border-stone-800 dark:bg-stone-900;
-}
-
-@utility chip {
-    @apply rounded-md bg-stone-100 px-2 py-0.5 text-xs font-medium text-stone-700 dark:bg-stone-800 dark:text-stone-300;
+    ::selection {
+        @apply bg-accent/30 text-white;
+    }
 }
 
 @utility eyebrow {
-    @apply text-xs font-semibold tracking-widest text-accent uppercase;
+    @apply text-[0.7rem] font-semibold tracking-[0.3em] text-accent uppercase;
+}
+
+@utility pill {
+    @apply rounded-full border border-line px-2.5 py-0.5 text-xs text-zinc-400;
+}
+
+/* Card header: number · category on a rule · date */
+@utility rule-label {
+    @apply flex items-center gap-3 font-mono text-[0.65rem] tracking-[0.2em] text-zinc-500 uppercase;
+}
+
+/* Fanned device mockups inside a card's media panel */
+@utility fan {
+    @apply relative flex h-full items-end justify-center;
+}
+@utility phone {
+    @apply absolute bottom-[-18%] w-[30%] overflow-hidden rounded-[1.4rem] border-[5px] border-zinc-900 bg-zinc-900 shadow-2xl shadow-black/60 transition-transform duration-500;
+}
+@utility browser {
+    @apply absolute bottom-[-10%] w-[62%] overflow-hidden rounded-lg border border-white/10 bg-zinc-900 shadow-2xl shadow-black/60 transition-transform duration-500;
+}
+
+@layer components {
+    .fan .left { transform: translateX(-62%) rotate(-7deg) scale(0.88); z-index: 1; }
+    .fan .mid { transform: translateY(-6%); z-index: 2; }
+    .fan .right { transform: translateX(62%) rotate(7deg) scale(0.88); z-index: 1; }
+    .fan .browser.left { transform: translateX(-34%) translateY(-14%) rotate(-4deg) scale(0.85); }
+    .fan .browser.mid { transform: translateY(-4%); }
+    .fan .browser.right { transform: translateX(34%) translateY(-14%) rotate(4deg) scale(0.85); }
+
+    .card:hover .left { transform: translateX(-70%) rotate(-9deg) scale(0.88); }
+    .card:hover .right { transform: translateX(70%) rotate(9deg) scale(0.88); }
+    .card:hover .browser.left { transform: translateX(-40%) translateY(-16%) rotate(-5deg) scale(0.85); }
+    .card:hover .browser.right { transform: translateX(40%) translateY(-16%) rotate(5deg) scale(0.85); }
+
+    .bar { @apply flex h-5 items-center gap-1 border-b border-white/10 bg-zinc-800 px-2; }
+    .bar i { @apply size-1.5 rounded-full bg-zinc-600; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+        .phone, .browser { transition: none; }
+    }
 }

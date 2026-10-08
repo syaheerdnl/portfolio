@@ -9,194 +9,228 @@
     <meta property="og:description" content="Flutter apps and Laravel web systems, built end to end and deployed.">
     <meta property="og:image" content="https://syaheerdaniel.dev/assets/kuncia-dashboard.webp">
     <meta property="og:url" content="https://syaheerdaniel.dev/">
-    <meta name="theme-color" content="#fafaf9">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d9488'/%3E%3Ctext x='16' y='22' font-family='system-ui,sans-serif' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3ESD%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#0a0a0b">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a0a0b'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' font-style='italic' fill='%232dd4bf' text-anchor='middle'%3ESD%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/app.css">
 </head>
 <body>
-    <header class="sticky top-0 z-10 border-b border-stone-200/70 bg-stone-50/80 backdrop-blur dark:border-stone-800/70 dark:bg-stone-950/80">
+    <!-- Top bar -->
+    <header class="sticky top-0 z-20 bg-ink/80 backdrop-blur">
         <nav class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
-            <a href="#top" class="flex items-center gap-2 font-semibold">
-                <span class="grid size-8 place-items-center rounded-lg bg-accent text-sm text-white">SD</span>
-                <span class="hidden sm:inline">Syaheer Daniel</span>
-            </a>
-            <div class="flex items-center gap-1 text-sm text-stone-600 dark:text-stone-400">
-                <a href="#projects" class="rounded-md px-2.5 py-1.5 hover:text-stone-900 dark:hover:text-white">Projects</a>
-                <a href="#experience" class="hidden rounded-md px-2.5 py-1.5 hover:text-stone-900 sm:inline dark:hover:text-white">Experience</a>
-                <a href="#contact" class="rounded-md px-2.5 py-1.5 hover:text-stone-900 dark:hover:text-white">Contact</a>
-                <a href="/Muhammad_Syaheer_Daniel_CV.pdf" class="ml-1 rounded-lg bg-stone-900 px-3 py-1.5 font-medium text-white hover:bg-stone-700 dark:bg-white dark:text-stone-900 dark:hover:bg-stone-200">CV</a>
-            </div>
+            <a href="#top" class="font-display text-xl text-white italic" aria-label="Home">sd<span class="text-accent">.</span></a>
+            <span id="greeting" class="rounded-full border border-line bg-panel px-4 py-1.5 text-sm text-zinc-300">Hello</span>
+            <a href="/Muhammad_Syaheer_Daniel_CV.pdf" class="rounded-lg border border-line bg-panel px-3 py-1.5 text-sm font-medium text-zinc-200 hover:border-zinc-600">CV</a>
         </nav>
     </header>
 
     <main id="top" class="mx-auto max-w-5xl px-4 sm:px-6">
         <!-- Hero -->
-        <section class="py-20 sm:py-28">
+        <section class="reveal py-20 text-center sm:py-28">
             <p class="eyebrow">Mobile &amp; Frontend Developer · Melaka</p>
-            <h1 class="mt-4 text-4xl font-bold tracking-tight text-balance sm:text-6xl">Muhammad Syaheer Daniel</h1>
-            <p class="mt-6 max-w-2xl text-lg text-stone-600 sm:text-xl dark:text-stone-400">
+            <h1 class="mt-5 font-display text-5xl leading-tight text-zinc-100 sm:text-7xl">
+                Muhammad Syaheer <em class="text-accent">Daniel</em>
+            </h1>
+            <p class="mx-auto mt-6 max-w-xl text-lg text-zinc-400">
                 I build Flutter apps and Laravel web systems, and I like taking them all the way to a live server.
             </p>
-            <div class="mt-8 flex flex-wrap gap-3">
-                <a href="#projects" class="rounded-lg bg-accent px-5 py-2.5 font-medium text-white hover:opacity-90">View projects</a>
-                <a href="/Muhammad_Syaheer_Daniel_CV.pdf" class="rounded-lg border border-stone-300 px-5 py-2.5 font-medium hover:bg-white dark:border-stone-700 dark:hover:bg-stone-900">Download CV</a>
-                <a href="#contact" class="rounded-lg px-5 py-2.5 font-medium text-stone-600 hover:text-stone-900 dark:text-stone-400 dark:hover:text-white">Contact →</a>
+            <div class="mt-8 flex flex-wrap justify-center gap-3">
+                <a href="#work" class="rounded-lg bg-accent px-5 py-2.5 font-medium text-ink hover:opacity-90">See my work</a>
+                <a href="#contact" class="rounded-lg border border-line bg-panel px-5 py-2.5 font-medium hover:border-zinc-600">Get in touch</a>
+            </div>
+        </section>
+
+        <!-- Work -->
+        <section id="work" class="pb-16">
+            <div class="reveal text-center">
+                <p class="eyebrow">Portfolio</p>
+                <h2 class="mt-3 font-display text-5xl text-zinc-100 sm:text-6xl">Selected <em class="text-accent">Work</em></h2>
+            </div>
+
+            <div class="mt-14 grid gap-6 md:grid-cols-2">
+                <!-- 01 Kuncia -->
+                <a href="https://kuncia.syaheerdaniel.dev" target="_blank" rel="noopener" class="card reveal group block self-start rounded-2xl md:col-start-1 md:row-start-1 border border-line bg-panel p-1.5 transition hover:border-zinc-600">
+                    <div class="px-4 pt-4">
+                        <div class="rule-label">
+                            <span class="text-accent">01</span>
+                            <span class="h-px flex-1 border-t border-dashed border-line"></span>
+                            <span>Web app</span>
+                            <span class="h-px flex-1 border-t border-dashed border-line"></span>
+                            <span>Q4 2026</span>
+                        </div>
+                        <div class="mt-4 flex items-center gap-3">
+                            <span class="grid size-9 place-items-center rounded-xl bg-teal-500/15 text-sm font-bold text-teal-300">K</span>
+                            <h3 class="text-xl font-semibold text-white">Kuncia</h3>
+                            <span class="ml-auto shrink-0 whitespace-nowrap rounded-full bg-accent/15 px-2 py-0.5 text-[0.65rem] font-semibold text-accent">LIVE</span>
+                        </div>
+                        <p class="mt-3 text-sm leading-relaxed text-zinc-400">Rental management for landlords: properties, tenants, monthly invoices, maintenance tickets, and utility bills split per meter with AI bill reading. My family uses it.</p>
+                    </div>
+                    <div class="mt-4 h-60 overflow-hidden rounded-xl bg-gradient-to-br from-teal-700 via-teal-900 to-zinc-900 sm:h-64">
+                        <div class="fan">
+                            <div class="browser left"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/kuncia-2.webp" alt="Kuncia invoice page" loading="lazy" class="w-full"></div>
+                            <div class="browser right"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/kuncia-3.webp" alt="Utility bill split between rooms" loading="lazy" class="w-full"></div>
+                            <div class="browser mid"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/kuncia-1.webp" alt="Kuncia landlord dashboard" loading="lazy" class="w-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-1.5 px-4 py-4">
+                        <span class="pill">Laravel</span><span class="pill">React</span><span class="pill">TypeScript</span><span class="pill">MySQL</span><span class="pill">Gemini API</span>
+                        <span class="ml-auto text-xs text-zinc-500 group-hover:text-accent">Open demo ↗</span>
+                    </div>
+                </a>
+
+                <!-- 02 PocketReview -->
+                <div class="card reveal self-start rounded-2xl border border-line bg-panel p-1.5 transition hover:border-zinc-600 md:col-start-2 md:row-span-2 md:row-start-1 md:mt-12">
+                    <div class="px-4 pt-4">
+                        <div class="rule-label">
+                            <span class="text-accent">02</span>
+                            <span class="h-px flex-1 border-t border-dashed border-line"></span>
+                            <span>Mobile app</span>
+                            <span class="h-px flex-1 border-t border-dashed border-line"></span>
+                            <span>2026</span>
+                        </div>
+                        <div class="mt-4 flex items-center gap-3">
+                            <span class="grid size-9 place-items-center rounded-xl bg-blue-500/15 text-sm font-bold text-blue-300">PR</span>
+                            <h3 class="text-xl font-semibold text-white">PocketReview</h3>
+                            <span class="ml-auto shrink-0 whitespace-nowrap rounded-full bg-zinc-800 px-2 py-0.5 text-[0.65rem] font-semibold text-zinc-300">THESIS</span>
+                        </div>
+                        <p class="mt-3 text-sm leading-relaxed text-zinc-400">AI code review for Dart and Kotlin on Android. Scores your code, points to the lines, and suggests fixes. Tested with 15 people: SUS 74.3 (Good).</p>
+                    </div>
+                    <div class="mt-4 h-60 overflow-hidden rounded-xl bg-gradient-to-br from-blue-700 via-indigo-900 to-zinc-900 sm:h-64">
+                        <div class="fan">
+                            <div class="phone left"><img src="/assets/pr-home.webp" alt="PocketReview home screen" loading="lazy" class="w-full"></div>
+                            <div class="phone right"><img src="/assets/pr-feedback.webp" alt="Suggested fix for an issue" loading="lazy" class="w-full"></div>
+                            <div class="phone mid"><img src="/assets/pr-results.webp" alt="Review result with a quality score of 62" loading="lazy" class="w-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 px-4 py-4">
+                        <span class="pill">Flutter</span><span class="pill">AWS Lambda</span><span class="pill">DynamoDB</span><span class="pill">Claude API</span>
+                    </div>
+                </div>
+
+                <!-- 03 Barbershop -->
+                <div class="card reveal rounded-2xl border border-dashed border-line bg-panel/60 p-1.5 self-start md:col-start-1 md:row-start-2">
+                    <div class="px-4 pt-4">
+                        <div class="rule-label">
+                            <span class="text-accent">03</span>
+                            <span class="h-px flex-1 border-t border-dashed border-line"></span>
+                            <span>Web + mobile</span>
+                            <span class="h-px flex-1 border-t border-dashed border-line"></span>
+                            <span>Next</span>
+                        </div>
+                        <div class="mt-4 flex items-center gap-3">
+                            <span class="grid size-9 place-items-center rounded-xl bg-amber-500/15 text-sm font-bold text-amber-300">B</span>
+                            <h3 class="text-xl font-semibold text-white">Barbershop system</h3>
+                            <span class="ml-auto shrink-0 whitespace-nowrap rounded-full bg-amber-500/15 px-2 py-0.5 text-[0.65rem] font-semibold text-amber-300">IN PROGRESS</span>
+                        </div>
+                        <p class="mt-3 text-sm leading-relaxed text-zinc-400">Bookings and a live queue for barbershops. Shop dashboard on the web, a customer app for booking and "you're next" alerts.</p>
+                    </div>
+                    <div class="mt-4 grid h-28 place-items-center rounded-xl bg-gradient-to-br from-amber-900/40 to-zinc-900 text-sm text-zinc-500">Coming soon</div>
+                    <div class="flex flex-wrap gap-1.5 px-4 py-4">
+                        <span class="pill">Laravel</span><span class="pill">Flutter</span>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- About -->
-        <section class="grid gap-8 border-t border-stone-200 py-16 md:grid-cols-[12rem_1fr] dark:border-stone-800">
-            <h2 class="eyebrow">About</h2>
-            <div class="max-w-2xl space-y-4 text-stone-700 dark:text-stone-300">
+        <section class="reveal grid gap-8 border-t border-line py-16 md:grid-cols-[12rem_1fr]">
+            <h2 class="eyebrow pt-1">About</h2>
+            <div class="max-w-2xl space-y-4 text-zinc-300">
                 <p>I'm a mobile and frontend developer. I spent two years at DATABOLT building and maintaining systems for government and business clients, mostly in Flutter, PHP and Laravel. I just finished a Master's in Mobile Software Development at UTeM, where my thesis was an AI code review app for Android.</p>
                 <p>These days I'm building full systems end to end, from the database all the way to a live server with its own domain.</p>
             </div>
         </section>
 
-        <!-- Projects -->
-        <section id="projects" class="border-t border-stone-200 py-16 dark:border-stone-800">
-            <h2 class="eyebrow">Projects</h2>
-
-            <article class="card mt-8 overflow-hidden">
-                <div class="grid gap-0 lg:grid-cols-[1fr_1.15fr]">
-                    <div class="flex flex-col gap-5 p-6 sm:p-8">
-                        <div>
-                            <div class="flex flex-wrap items-center gap-2">
-                                <h3 class="text-2xl font-bold">Kuncia</h3>
-                                <span class="rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-semibold text-accent dark:bg-accent/15">Live</span>
-                            </div>
-                            <p class="mt-1 text-sm text-stone-500">Rental management system</p>
-                        </div>
-                        <p class="text-stone-700 dark:text-stone-300">
-                            Landlords manage properties, tenants, monthly invoices and maintenance tickets in one place. Tenants see their bills and report problems. Utility bills are entered once per meter and split between the occupied rooms, and the AI can read the amount straight from a TNB or water bill photo. My family uses it for their rentals.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="chip">Laravel 13</span><span class="chip">React (Inertia)</span><span class="chip">TypeScript</span><span class="chip">MySQL</span><span class="chip">Tailwind</span><span class="chip">Gemini API</span><span class="chip">Ubuntu VPS</span><span class="chip">GitHub Actions</span>
-                        </div>
-                        <div class="mt-auto space-y-3">
-                            <a href="https://kuncia.syaheerdaniel.dev" target="_blank" rel="noopener" class="inline-flex rounded-lg bg-stone-900 px-4 py-2 text-sm font-medium text-white hover:bg-stone-700 dark:bg-white dark:text-stone-900 dark:hover:bg-stone-200">Open live demo ↗</a>
-                            <p class="text-xs text-stone-500">
-                                Demo login: <code class="font-mono text-stone-700 dark:text-stone-300">guest@kuncia.test</code> / <code class="font-mono text-stone-700 dark:text-stone-300">guest1234</code> · sample data resets every night
-                            </p>
-                        </div>
-                    </div>
-                    <div class="border-t border-stone-200 bg-stone-100 p-4 sm:p-6 lg:border-t-0 lg:border-l dark:border-stone-800 dark:bg-stone-950">
-                        <img src="/assets/kuncia-dashboard.webp" width="1600" height="1000" alt="Kuncia landlord dashboard with occupancy, outstanding rent and a billed vs collected chart" class="rounded-lg border border-stone-200 shadow-sm dark:border-stone-800" loading="lazy">
-                        <img src="/assets/kuncia-utilities.webp" width="1600" height="779" alt="Utility bills section: one TNB bill split between four occupied rooms" class="mt-4 rounded-lg border border-stone-200 shadow-sm dark:border-stone-800" loading="lazy">
-                    </div>
-                </div>
-            </article>
-
-            <article class="card mt-6 p-6 sm:p-8">
-                <div class="flex flex-wrap items-center gap-2">
-                    <h3 class="text-2xl font-bold">PocketReview</h3>
-                    <span class="rounded-full bg-stone-100 px-2.5 py-0.5 text-xs font-semibold text-stone-600 dark:bg-stone-800 dark:text-stone-300">Master's thesis</span>
-                </div>
-                <p class="mt-1 text-sm text-stone-500">AI code review app for Android</p>
-                <p class="mt-5 max-w-3xl text-stone-700 dark:text-stone-300">
-                    An Android app for Dart and Kotlin developers that reviews code with AI and explains the problems it finds. It runs on a serverless AWS backend. Tested with 15 participants: SUS score 74.3 (Good) plus expert interviews.
-                </p>
-                <dl class="mt-6 grid max-w-md grid-cols-2 gap-4">
-                    <div class="rounded-xl bg-stone-100 p-4 dark:bg-stone-800/60">
-                        <dt class="text-xs text-stone-500">SUS score</dt>
-                        <dd class="mt-1 text-2xl font-bold">74.3</dd>
-                    </div>
-                    <div class="rounded-xl bg-stone-100 p-4 dark:bg-stone-800/60">
-                        <dt class="text-xs text-stone-500">Participants</dt>
-                        <dd class="mt-1 text-2xl font-bold">15</dd>
-                    </div>
-                </dl>
-                <div class="mt-6 flex flex-wrap gap-1.5">
-                    <span class="chip">Flutter</span><span class="chip">AWS Lambda</span><span class="chip">API Gateway</span><span class="chip">DynamoDB</span><span class="chip">Claude API</span>
-                </div>
-            </article>
-        </section>
-
         <!-- Experience -->
-        <section id="experience" class="grid gap-8 border-t border-stone-200 py-16 md:grid-cols-[12rem_1fr] dark:border-stone-800">
-            <h2 class="eyebrow">Experience</h2>
+        <section id="experience" class="reveal grid gap-8 border-t border-line py-16 md:grid-cols-[12rem_1fr]">
+            <h2 class="eyebrow pt-1">Experience</h2>
             <div>
                 <div class="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 class="text-lg font-semibold">DATABOLT SDN BHD</h3>
-                    <p class="text-sm text-stone-500">Melaka · Aug 2023 to Nov 2025</p>
+                    <h3 class="text-lg font-semibold text-white">DATABOLT SDN BHD</h3>
+                    <p class="text-sm text-zinc-500">Melaka · Aug 2023 to Nov 2025</p>
                 </div>
-                <ol class="mt-6 space-y-8 border-l border-stone-200 pl-6 dark:border-stone-800">
+                <ol class="mt-6 space-y-8 border-l border-line pl-6">
                     <li class="relative">
                         <span class="absolute top-1.5 -left-[1.8rem] size-2.5 rounded-full bg-accent"></span>
                         <div class="flex flex-wrap items-baseline justify-between gap-2">
-                            <p class="font-medium">Frontend Developer</p>
-                            <p class="text-sm text-stone-500">Feb 2024 to Nov 2025 · freelance from Aug 2025</p>
+                            <p class="font-medium text-zinc-100">Frontend Developer</p>
+                            <p class="text-sm text-zinc-500">Feb 2024 to Nov 2025 · freelance from Aug 2025</p>
                         </div>
-                        <p class="mt-2 text-stone-700 dark:text-stone-300">Moved a government client's module off a legacy Visual Basic system onto the web. Built the UI for a land administration system, maintained a kindergarten admin system, and ran UAT sessions with clients before go-live.</p>
+                        <p class="mt-2 text-zinc-400">Moved a government client's module off a legacy Visual Basic system onto the web. Built the UI for a land administration system, maintained a kindergarten admin system, and ran UAT sessions with clients before go-live.</p>
                     </li>
                     <li class="relative">
-                        <span class="absolute top-1.5 -left-[1.8rem] size-2.5 rounded-full bg-stone-300 dark:bg-stone-600"></span>
+                        <span class="absolute top-1.5 -left-[1.8rem] size-2.5 rounded-full bg-zinc-600"></span>
                         <div class="flex flex-wrap items-baseline justify-between gap-2">
-                            <p class="font-medium">Flutter &amp; Front-End Programmer Intern</p>
-                            <p class="text-sm text-stone-500">Aug 2023 to Jan 2024</p>
+                            <p class="font-medium text-zinc-100">Flutter &amp; Front-End Programmer Intern</p>
+                            <p class="text-sm text-zinc-500">Aug 2023 to Jan 2024</p>
                         </div>
-                        <p class="mt-2 text-stone-700 dark:text-stone-300">Worked on a Flutter kindergarten admin app and turned Figma designs into web and mobile screens for the land administration system.</p>
+                        <p class="mt-2 text-zinc-400">Worked on a Flutter kindergarten admin app and turned Figma designs into web and mobile screens for the land administration system.</p>
                     </li>
                 </ol>
             </div>
         </section>
 
         <!-- Education -->
-        <section class="grid gap-8 border-t border-stone-200 py-16 md:grid-cols-[12rem_1fr] dark:border-stone-800">
-            <h2 class="eyebrow">Education</h2>
+        <section class="reveal grid gap-8 border-t border-line py-16 md:grid-cols-[12rem_1fr]">
+            <h2 class="eyebrow pt-1">Education</h2>
             <ul class="space-y-5">
                 <li class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                    <div>
-                        <p class="font-medium">Master in Mobile Software Development</p>
-                        <p class="text-sm text-stone-500">Universiti Teknikal Malaysia Melaka (UTeM)</p>
-                    </div>
-                    <p class="text-sm text-stone-500">2025 to 2026 · CGPA 3.97</p>
+                    <div><p class="font-medium text-zinc-100">Master in Mobile Software Development</p><p class="text-sm text-zinc-500">Universiti Teknikal Malaysia Melaka (UTeM)</p></div>
+                    <p class="text-sm text-zinc-500">2025 to 2026 · CGPA 3.97</p>
                 </li>
                 <li class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                    <div>
-                        <p class="font-medium">Bachelor of Information Technology (Hons)</p>
-                        <p class="text-sm text-stone-500">Universiti Tun Hussein Onn Malaysia (UTHM)</p>
-                    </div>
-                    <p class="text-sm text-stone-500">2021 to 2024 · CGPA 3.66</p>
+                    <div><p class="font-medium text-zinc-100">Bachelor of Information Technology (Hons)</p><p class="text-sm text-zinc-500">Universiti Tun Hussein Onn Malaysia (UTHM)</p></div>
+                    <p class="text-sm text-zinc-500">2021 to 2024 · CGPA 3.66</p>
                 </li>
                 <li class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                    <div>
-                        <p class="font-medium">Diploma in Information Technology</p>
-                        <p class="text-sm text-stone-500">Universiti Tun Hussein Onn Malaysia (UTHM)</p>
-                    </div>
-                    <p class="text-sm text-stone-500">2018 to 2021</p>
+                    <div><p class="font-medium text-zinc-100">Diploma in Information Technology</p><p class="text-sm text-zinc-500">Universiti Tun Hussein Onn Malaysia (UTHM)</p></div>
+                    <p class="text-sm text-zinc-500">2018 to 2021</p>
                 </li>
             </ul>
         </section>
 
         <!-- Skills -->
-        <section class="grid gap-8 border-t border-stone-200 py-16 md:grid-cols-[12rem_1fr] dark:border-stone-800">
-            <h2 class="eyebrow">Skills</h2>
+        <section class="reveal grid gap-8 border-t border-line py-16 md:grid-cols-[12rem_1fr]">
+            <h2 class="eyebrow pt-1">Skills</h2>
             <dl class="grid gap-5 sm:grid-cols-2">
-                <div><dt class="text-sm text-stone-500">Mobile &amp; Frontend</dt><dd class="mt-2 flex flex-wrap gap-1.5"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Bootstrap</span></dd></div>
-                <div><dt class="text-sm text-stone-500">Backend</dt><dd class="mt-2 flex flex-wrap gap-1.5"><span class="chip">PHP</span><span class="chip">Laravel</span></dd></div>
-                <div><dt class="text-sm text-stone-500">Cloud</dt><dd class="mt-2 flex flex-wrap gap-1.5"><span class="chip">AWS Lambda</span><span class="chip">API Gateway</span><span class="chip">DynamoDB</span></dd></div>
-                <div><dt class="text-sm text-stone-500">Testing</dt><dd class="mt-2 flex flex-wrap gap-1.5"><span class="chip">Functional</span><span class="chip">System</span><span class="chip">Cross-device</span><span class="chip">UAT</span></dd></div>
-                <div><dt class="text-sm text-stone-500">Tools</dt><dd class="mt-2 flex flex-wrap gap-1.5"><span class="chip">Git</span><span class="chip">Bitbucket</span><span class="chip">Figma</span></dd></div>
+                <div><dt class="text-sm text-zinc-500">Mobile &amp; Frontend</dt><dd class="mt-2 flex flex-wrap gap-1.5"><span class="pill">Flutter</span><span class="pill">Dart</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">Bootstrap</span></dd></div>
+                <div><dt class="text-sm text-zinc-500">Backend</dt><dd class="mt-2 flex flex-wrap gap-1.5"><span class="pill">PHP</span><span class="pill">Laravel</span></dd></div>
+                <div><dt class="text-sm text-zinc-500">Cloud</dt><dd class="mt-2 flex flex-wrap gap-1.5"><span class="pill">AWS Lambda</span><span class="pill">API Gateway</span><span class="pill">DynamoDB</span></dd></div>
+                <div><dt class="text-sm text-zinc-500">Testing</dt><dd class="mt-2 flex flex-wrap gap-1.5"><span class="pill">Functional</span><span class="pill">System</span><span class="pill">Cross-device</span><span class="pill">UAT</span></dd></div>
+                <div><dt class="text-sm text-zinc-500">Tools</dt><dd class="mt-2 flex flex-wrap gap-1.5"><span class="pill">Git</span><span class="pill">Bitbucket</span><span class="pill">Figma</span></dd></div>
             </dl>
         </section>
 
         <!-- Contact -->
-        <section id="contact" class="border-t border-stone-200 py-20 dark:border-stone-800">
-            <div class="card p-8 sm:p-12">
-                <h2 class="text-3xl font-bold tracking-tight">Let's talk.</h2>
-                <p class="mt-3 text-stone-600 dark:text-stone-400">Open to mobile and frontend roles.</p>
-                <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="mailto:muhammadsyaheerdaniel@gmail.com" class="rounded-lg bg-accent px-5 py-2.5 font-medium text-white hover:opacity-90">muhammadsyaheerdaniel@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/syaheer-daniel-726932274/" target="_blank" rel="noopener" class="rounded-lg border border-stone-300 px-5 py-2.5 font-medium hover:bg-stone-50 dark:border-stone-700 dark:hover:bg-stone-800">LinkedIn ↗</a>
-                    <a href="/Muhammad_Syaheer_Daniel_CV.pdf" class="rounded-lg border border-stone-300 px-5 py-2.5 font-medium hover:bg-stone-50 dark:border-stone-700 dark:hover:bg-stone-800">Download CV</a>
-                </div>
+        <section id="contact" class="reveal border-t border-line py-20 text-center">
+            <p class="eyebrow">Contact</p>
+            <h2 class="mt-3 font-display text-4xl text-zinc-100 sm:text-5xl">Let's <em class="text-accent">talk</em></h2>
+            <p class="mt-4 text-zinc-400">Open to mobile and frontend roles.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-3">
+                <a href="mailto:muhammadsyaheerdaniel@gmail.com" class="rounded-lg bg-accent px-5 py-2.5 font-medium text-ink hover:opacity-90">muhammadsyaheerdaniel@gmail.com</a>
+                <a href="https://www.linkedin.com/in/syaheer-daniel-726932274/" target="_blank" rel="noopener" class="rounded-lg border border-line bg-panel px-5 py-2.5 font-medium hover:border-zinc-600">LinkedIn ↗</a>
+                <a href="/Muhammad_Syaheer_Daniel_CV.pdf" class="rounded-lg border border-line bg-panel px-5 py-2.5 font-medium hover:border-zinc-600">Download CV</a>
             </div>
         </section>
     </main>
 
-    <footer class="mx-auto max-w-5xl px-4 pb-10 text-sm text-stone-500 sm:px-6">
-        © 2026 Muhammad Syaheer Daniel · Hosted on my own VPS.
+    <footer class="mx-auto max-w-5xl border-t border-line px-4 py-8 text-center text-sm text-zinc-600 sm:px-6">
+        © 2026 Muhammad Syaheer Daniel · Hosted on my own VPS
     </footer>
+
+    <script>
+        // Greeting by the visitor's local time
+        const h = new Date().getHours();
+        document.getElementById('greeting').textContent =
+            h < 5 ? '🌙 Good evening' : h < 12 ? '☀️ Good morning' : h < 19 ? '🌤️ Good afternoon' : '🌙 Good evening';
+
+        // Fade sections in as they scroll into view
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    </script>
 </body>
 </html>
