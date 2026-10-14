@@ -47,15 +47,17 @@
     @apply flex items-center gap-3 font-mono text-[0.65rem] tracking-[0.2em] text-zinc-500 uppercase;
 }
 
-/* Fanned device mockups inside a card's media panel */
+/* Fanned device mockups inside a card's media panel.
+   Widths are % of the panel but capped: the panel height is fixed, so on a
+   wide single-column card (tablet) uncapped mockups get cut off. */
 @utility fan {
     @apply relative flex h-full items-end justify-center;
 }
 @utility phone {
-    @apply absolute bottom-[-18%] w-[30%] overflow-hidden rounded-[1.4rem] border-[5px] border-zinc-900 bg-zinc-900 shadow-2xl shadow-black/60 transition-transform duration-500;
+    @apply absolute bottom-[-18%] w-[30%] max-w-[8.75rem] overflow-hidden rounded-[1.4rem] border-[5px] border-zinc-900 bg-zinc-900 shadow-2xl shadow-black/60 transition-transform duration-500;
 }
 @utility browser {
-    @apply absolute bottom-[-10%] w-[62%] overflow-hidden rounded-lg border border-white/10 bg-zinc-900 shadow-2xl shadow-black/60 transition-transform duration-500;
+    @apply absolute bottom-[-10%] w-[62%] max-w-[18rem] overflow-hidden rounded-lg border border-white/10 bg-zinc-900 shadow-2xl shadow-black/60 transition-transform duration-500;
 }
 
 @layer components {
