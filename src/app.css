@@ -110,6 +110,14 @@
     border-radius: 1.75rem;
     background: #000;
 }
+/* Landscape demo (Nearby): 16:9, sized by width instead of height */
+.demo-dialog video.landscape {
+    height: auto;
+    width: min(90vw, 1100px);
+    max-height: 78vh;
+    aspect-ratio: 16 / 9;
+    border-radius: 1rem;
+}
 
 /* Light mode: same classes, remapped colours. Dark stays the default. */
 html[data-theme="light"] {
